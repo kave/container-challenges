@@ -1,0 +1,48 @@
+version: '3'
+
+services:
+  one:
+    container_name: one
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        - CONTAINER_INTEGER=1923
+    ports:
+      - 8081:80
+  two:
+    container_name: two
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        - CONTAINER_INTEGER=4567
+    ports:
+      - 8082:80
+  three:
+    container_name: three
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        - CONTAINER_INTEGER=9876
+    ports:
+      - 8083:80
+  four:
+    container_name: four
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        - CONTAINER_INTEGER=6337
+    ports:
+      - 8084:80
+  five:
+    container_name: five
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        - CONTAINER_INTEGER=3478
+    ports:
+      - 8085:80
