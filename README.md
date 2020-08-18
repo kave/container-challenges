@@ -1,4 +1,4 @@
-# Docker Challenges
+# Container Challenges
 
 ## 1. Sum the containers
 The spun up containers will respond with an integer on port 80. Sum the values and provide the result.
