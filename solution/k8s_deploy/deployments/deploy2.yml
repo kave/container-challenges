@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: container-two
+  namespace: container-challenges
+  labels:
+    app: ContainerTwo
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ContainerTwo
+  template:
+    metadata:
+      labels:
+        app: ContainerTwo
+    spec:
+      containers:
+        - name: container-two
+          image: "localhost:5000/container_two:two"
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 80
+          resources:
+            limits:
+              cpu: "0.5"
+              memory: "128Mi"
+            requests:
+              cpu: "250m"
+              memory: "50Mi"

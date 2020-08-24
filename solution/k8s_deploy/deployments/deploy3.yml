@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: container-three
+  namespace: container-challenges
+  labels:
+    app: ContainerThree
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ContainerThree
+  template:
+    metadata:
+      labels:
+        app: ContainerThree
+    spec:
+      containers:
+        - name: container-three
+          image: "localhost:5000/container_three:three"
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 80
+          resources:
+            limits:
+              cpu: "0.5"
+              memory: "128Mi"
+            requests:
+              cpu: "250m"
+              memory: "50Mi"

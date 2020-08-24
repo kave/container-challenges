@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: container-four
+  namespace: container-challenges
+  labels:
+    app: ContainerFour
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ContainerFour
+  template:
+    metadata:
+      labels:
+        app: ContainerFour
+    spec:
+      containers:
+        - name: container-four
+          image: "localhost:5000/container_four:four"
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 80
+          resources:
+            limits:
+              cpu: "0.5"
+              memory: "128Mi"
+            requests:
+              cpu: "250m"
+              memory: "50Mi"

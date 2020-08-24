@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: container-one
+  namespace: container-challenges
+  labels:
+    app: ContainerOne
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ContainerOne
+  template:
+    metadata:
+      labels:
+        app: ContainerOne
+    spec:
+      containers:
+        - name: container-one
+          image: "localhost:5000/container_one:one"
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 80
+          resources:
+            limits:
+              cpu: "0.5"
+              memory: "128Mi"
+            requests:
+              cpu: "250m"
+              memory: "50Mi"
