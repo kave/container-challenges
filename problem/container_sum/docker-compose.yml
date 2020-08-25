@@ -8,6 +8,7 @@ services:
       dockerfile: Dockerfile
       args:
         - CONTAINER_INTEGER=1923
+    image: one
     ports:
       - 8081:80
   two:
@@ -17,6 +18,7 @@ services:
       dockerfile: Dockerfile
       args:
         - CONTAINER_INTEGER=4567
+    image: two
     ports:
       - 8082:80
   three:
@@ -26,6 +28,7 @@ services:
       dockerfile: Dockerfile
       args:
         - CONTAINER_INTEGER=9876
+    image: three
     ports:
       - 8083:80
   four:
@@ -35,6 +38,7 @@ services:
       dockerfile: Dockerfile
       args:
         - CONTAINER_INTEGER=6337
+    image: four
     ports:
       - 8084:80
   five:
@@ -44,5 +48,6 @@ services:
       dockerfile: Dockerfile
       args:
         - CONTAINER_INTEGER=3478
+    image: five
     ports:
       - 8085:80
